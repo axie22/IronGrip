@@ -1,3 +1,4 @@
+import './SetCard.css';
 
 function SetCard() {
     let exerciseName = "Bench Press";
