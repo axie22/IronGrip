@@ -11,8 +11,8 @@ function SetCard() {
             <div className="exercise-name">
                 <h2>{exerciseName}</h2>
             </div>
-            <div>
-                <table>
+            <div className='row'>
+                <table className='set-card title'>
                     <tr>
                         <th>Sets</th>
                         <th>Previous</th>
