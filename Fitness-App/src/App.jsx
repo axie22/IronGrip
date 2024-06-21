@@ -4,7 +4,8 @@ import Header from "./Header.jsx";
 import Footer from "./Components/Pages/WorkoutInput/Footer.jsx";
 import Workout from "./Components/Pages/WorkoutInput/Workout.jsx";
 import SetCard from "./Components/Pages/WorkoutInput/SetCard.jsx";
-import LandingPage from './Pages/LandingPage/LandingPage';
+import LandingPage from './Components/Pages/LandingPage/LandingPage.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -14,7 +15,6 @@ function App() {
         <Route exact path="/" component={LandingPage} />
         <Route path="/workout" component={Workout} />
         <Route path="/set-card" component={SetCard} />
-        /* Add more routes as needed */
       </Switch>
       <Footer />
     </Router>
