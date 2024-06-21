@@ -1,7 +1,9 @@
 import React from 'react';
 import './LandingPage.css';
+import Navbar from '../../Navbar'
+import MainLayout from '../../../Layout/MainLayout'
 
-const LandingPage = () => {
+function LandingPage() {
   return (
     <div className="landing-page">
       <header className="header">
@@ -103,4 +105,4 @@ const LandingPage = () => {
   );
 }
 
-export default LandingPage;
+export default LandingPage
