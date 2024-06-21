@@ -1,0 +1,63 @@
+.landing-page {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .header-left, .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .previous-activity, .calendar {
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 45%;
+  }
+  
+  .activity-table table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+  }
+  
+  .activity-table th, .activity-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .activity-table th {
+    background-color: #555;
+  }
+  
+  .calendar-widget img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
