@@ -1,10 +1,12 @@
 import React from 'react';
 import './LandingPage.css';
-import Navbar from '../../Navbar'
-import MainLayout from '../../../Layout/MainLayout'
 
 function LandingPage() {
   return (
+    <div>
+      <h1>This is the landing page</h1>
+    </div>
+    /*
     <div className="landing-page">
       <header className="header">
         <div className="header-left">
@@ -102,6 +104,7 @@ function LandingPage() {
         </section>
       </main>
     </div>
+    */
   );
 }
 

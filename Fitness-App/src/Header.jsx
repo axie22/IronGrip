@@ -4,13 +4,13 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <Link to ="/">Home</Link>
           </li>
           <li>
-            <a href="#">My Profile</a>
+            <Link to ="/workout">Workout</Link>
           </li>
           <li>
-            <a href="#">Workout Log</a>
+            <Link to ="/set-card">set-card</Link>
           </li>
         </ul>
       </nav>

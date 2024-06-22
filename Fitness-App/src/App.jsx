@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./Header.jsx";
 import Footer from "./Components/Footer.jsx";
 import Workout from "./Components/Pages/WorkoutInput/Workout.jsx";
@@ -8,17 +8,21 @@ import LandingPage from './Components/Pages/LandingPage/LandingPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  /* <Route path="/" element={<LandingPage />} /> */
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={LandingPage} />
-        <Route path="/workout" component={Workout} />
-        <Route path="/set-card" component={SetCard} />
-      </Switch>
-      <Footer />
-    </Router>
+      <>
+        <Header />
+        
+        <Routes>  
+          <Route path="/" element={<h1>Landing Page</h1>} />
+          <Route path="/workout" element={<Workout />} />
+          <Route path="/set-card" element={<SetCard />} />
+        </Routes>
+        
+        <Footer />
+      </>
   );
 }
 
 export default App;
+
