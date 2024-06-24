@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom'; 
+
 function Header() {
   return (
     <header>
@@ -12,6 +15,7 @@ function Header() {
           <li>
             <Link to ="/set-card">set-card</Link>
           </li>
+          
         </ul>
       </nav>
       <hr></hr>

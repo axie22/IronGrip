@@ -22,6 +22,11 @@ function App() {
         <Footer />
       </>
   );
+  /* 
+    Later on we're going to want to add id attributes to the paths so they aren't hardcoded
+    <Route path="/myprofile/:id" element={<Workout />} />
+
+  */
 }
 
 export default App;
