@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./Header.jsx";
-import Footer from "./Components/Footer.jsx";
+import Footer from "./Footer.jsx";
 import Workout from "./Components/Pages/WorkoutInput/Workout.jsx";
 import SetCard from "./Components/Pages/WorkoutInput/SetCard.jsx";
 import LandingPage from './Components/Pages/LandingPage/LandingPage.jsx';
