@@ -1,34 +1,30 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client";
-import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import App from './App.jsx';
 import LandingPage from './Components/Pages/LandingPage/LandingPage.jsx'; 
-import './index.css'
+import Workout from "./Components/Pages/WorkoutInput/Workout.jsx";
+import SetCard from "./Components/Pages/WorkoutInput/SetCard.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
-/**
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
-*/
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <App/>,
-    },
-    {
-      path: "landingpage",
-      element: <LandingPage/>,
-    },
-  ]);
-
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+function Main() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<LandingPage />} />
+          <Route path="workout" element={<Workout />} />
+          <Route path="set-card" element={<SetCard />} />
+        </Route>
+      </Routes>
+    </Router>
   );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Main />
+  </React.StrictMode>
+);

@@ -1,18 +1,28 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-function Navbar() {
+export default function Navigation() {
     return (
-        <div className='navbar'>
-            <div className='navbar-logo'>
-                Workout App
-            </div>
-            <ul className='navbar-menu'>
-                <li><Link to="/">LandingPage</Link></li>
-                <li><Link to="/workoutinput">WorkoutInput</Link></li>
-            </ul>
-        </div>
-    )
+        <>
+        <Navbar bg="light" data-bs-theme="light">
+            <Container>
+            <Navbar.Brand href="/">Workout App</Navbar.Brand>
+            <Nav className="me-auto">
+                <Nav.Link href="/Workout">WorkoutInput</Nav.Link>
+                </Nav>
+            </Container>
+        </Navbar>
+        </>
+    );
+    /*
+    return <nav className="nav">
+        <a href="/" className="site-title">Workout App</a>
+        <ul>
+            <li>
+                <a href="/Workout">WorkoutInput</a>
+            </li>
+        </ul>
+    </nav>
+    */
 }
-
-export default Navbar
