@@ -16,8 +16,12 @@ function Workout() {
               <SetCard
                 exerciseName="Bench Press"
                 previous="130 x 5"
-                weight="185"
-                reps="10"
+              />
+            </div>
+            <div className='exercise'>
+              <SetCard 
+                exerciseName="Incline Smith Bench Press"
+                previous= "135 x 5"
               />
             </div>
           </div>

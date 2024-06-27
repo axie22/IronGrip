@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './SetCard.css';
 
-function SetCard({ exerciseName, previous, weight, reps }) {
+function SetCard({ exerciseName, previous}) {
     const [rows, setRows] = useState([
-        { id: 1, previous, weight, reps },
+        { id: 1, previous, weight: '', reps: '' },
         { id: 2, previous: '', weight: '', reps: '' },
         { id: 3, previous: '', weight: '', reps: '' },
         { id: 4, previous: '', weight: '', reps: '' },
@@ -21,6 +21,13 @@ function SetCard({ exerciseName, previous, weight, reps }) {
     const deleteRow = (id) => {
         const updatedRows = rows.filter(row => row.id !== id);
         setRows(updateRowIds(updatedRows));
+    };
+
+    const handleInputChange = (id, field, value) => {
+        const updatedRows = rows.map(row => 
+            row.id === id ? { ...row, [field]: value } : row
+        );
+        setRows(updatedRows);
     };
 
     return (
@@ -43,8 +50,20 @@ function SetCard({ exerciseName, previous, weight, reps }) {
                             <tr key={row.id}>
                                 <td>{row.id}</td>
                                 <td>{row.previous}</td>
-                                <td>{row.weight}</td>
-                                <td>{row.reps}</td>
+                                <td>
+                                    <input 
+                                        type="text" 
+                                        value={row.weight} 
+                                        onChange={(e) => handleInputChange(row.id, 'weight', e.target.value)}
+                                    />
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text" 
+                                        value={row.reps} 
+                                        onChange={(e) => handleInputChange(row.id, 'reps', e.target.value)}
+                                    />
+                                </td>
                                 <td onClick={() => deleteRow(row.id)}>-</td>
                             </tr>
                         ))}
