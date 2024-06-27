@@ -52,47 +52,52 @@ function getTitle() {
         <div className="header-container">
             <div className="title-container">
                 <h1>Today's Workout ({month}/{day}/{year})</h1>
-                <h3>Timer: {formatTime(timer)}</h3>
             </div>
             <div className="button-container">
-                <ButtonGroup className="mb-2">
-                    <ToggleButton
-                        id="start-button"
-                        type="radio"
-                        variant="outline-success"
-                        name="timer-control"
-                        value="start"
-                        checked={isActive}
-                        onChange={startTimer}
-                        className='custom-size'
-                    >
-                        Start
-                    </ToggleButton>
-                    <ToggleButton
-                        id="stop-button"
-                        type="radio"
-                        variant="outline-danger"
-                        name="timer-control"
-                        value="stop"
-                        checked={!isActive && timer !== 0}
-                        onChange={stopTimer}
-                        className='custom-size'
-                    >
-                        Stop
-                    </ToggleButton>
-                    <ToggleButton
-                        id="reset-button"
-                        type="radio"
-                        variant="outline-primary"
-                        name="timer-control"
-                        value="reset"
-                        checked={timer === 0}
-                        onChange={resetTimer}
-                        className='custom-size !important'
-                    >
-                        Reset
-                    </ToggleButton>
-                </ButtonGroup>
+                <div> 
+                    <h3>Timer: {formatTime(timer)}</h3>
+                </div>
+                <div>
+                    <ButtonGroup className="mb-2">
+                        <ToggleButton
+                            id="start-button"
+                            type="radio"
+                            variant="outline-success"
+                            name="timer-control"
+                            value="start"
+                            checked={isActive}
+                            onChange={startTimer}
+                            className='custom-size'
+                        >
+                            Start
+                        </ToggleButton>
+                        <ToggleButton
+                            id="stop-button"
+                            type="radio"
+                            variant="outline-danger"
+                            name="timer-control"
+                            value="stop"
+                            checked={!isActive && timer !== 0}
+                            onChange={stopTimer}
+                            className='custom-size'
+                        >
+                            Stop
+                        </ToggleButton>
+                        <ToggleButton
+                            id="reset-button"
+                            type="radio"
+                            variant="outline-primary"
+                            name="timer-control"
+                            value="reset"
+                            checked={timer === 0}
+                            onChange={resetTimer}
+                            className='custom-size !important'
+                        >
+                            Reset
+                        </ToggleButton>
+                    </ButtonGroup>
+                </div>
+                
             </div>
         </div>
     );
