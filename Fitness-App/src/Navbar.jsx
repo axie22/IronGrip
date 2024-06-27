@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 export default function Navigation() {
     return (
         <>
-        <Navbar bg="light" data-bs-theme="light">
+        <Navbar bg="secondary" variant="dark">
             <Container>
             <Navbar.Brand href="/">Workout App</Navbar.Brand>
             <Nav className="me-auto">
@@ -15,14 +15,4 @@ export default function Navigation() {
         </Navbar>
         </>
     );
-    /*
-    return <nav className="nav">
-        <a href="/" className="site-title">Workout App</a>
-        <ul>
-            <li>
-                <a href="/Workout">WorkoutInput</a>
-            </li>
-        </ul>
-    </nav>
-    */
 }

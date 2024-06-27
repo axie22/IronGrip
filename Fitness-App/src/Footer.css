@@ -1,0 +1,39 @@
+.main-footer {
+    background: #f8f9fa;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 -15px;
+    justify-content: center;
+}
+
+.column {
+    flex: 1;
+    padding: 0 15px;
+    min-width: 0; 
+    text-align: center;
+}
+
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+hr {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.column-small {
+    flex-basis: 100%;
+    text-align: center;
+}
