@@ -1,13 +1,25 @@
-function Workout() {
-  const exerciseName = "Bench";
-  const timer = "1:05";
+import React from 'react';
+import SetCard from './SetCard';
+import Title from './Title';
+import './Workout.css';
 
+function Workout() {
   return (
-    <ul>
-      <li>Apple</li>
-      <li>{exerciseName}</li>
-      <li>{timer}</li>
-    </ul>
+    <>
+      <div className='title'>
+        <Title />
+      </div>
+      <div>
+        <SetCard
+          exerciseName="Bench Press"
+          previous="130 x 5"
+          weight="185"
+          reps="10"
+        />
+      </div>
+      
+    </>
+    
   );
 }
 
