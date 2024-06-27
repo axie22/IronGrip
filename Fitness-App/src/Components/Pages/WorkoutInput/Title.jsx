@@ -49,15 +49,12 @@ function getTitle() {
     };
 
     return (
-        <>
-            <h1>
-                Today's Workout ({month}/{day}/{year})
-            </h1>
-            <h3>
-                Timer: {formatTime(timer)}
-            </h3>
-            <div>
-                {/* Use the react bootstrap class for button design */}
+        <div className="header-container">
+            <div className="title-container">
+                <h1>Today's Workout ({month}/{day}/{year})</h1>
+                <h3>Timer: {formatTime(timer)}</h3>
+            </div>
+            <div className="button-container">
                 <ButtonGroup className="mb-2">
                     <ToggleButton
                         id="start-button"
@@ -67,6 +64,7 @@ function getTitle() {
                         value="start"
                         checked={isActive}
                         onChange={startTimer}
+                        className='custom-size'
                     >
                         Start
                     </ToggleButton>
@@ -78,6 +76,7 @@ function getTitle() {
                         value="stop"
                         checked={!isActive && timer !== 0}
                         onChange={stopTimer}
+                        className='custom-size'
                     >
                         Stop
                     </ToggleButton>
@@ -89,14 +88,13 @@ function getTitle() {
                         value="reset"
                         checked={timer === 0}
                         onChange={resetTimer}
+                        className='custom-size !important'
                     >
                         Reset
                     </ToggleButton>
                 </ButtonGroup>
             </div>
-            
-            
-        </>
+        </div>
     );
 }
 
