@@ -37,3 +37,12 @@ hr {
     flex-basis: 100%;
     text-align: center;
 }
+
+.main-footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}

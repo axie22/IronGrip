@@ -16,23 +16,22 @@ const Footer = () => {
                   rel="noreferrer"
                   aria-label="Contact"
                 >
-                  Email Us
+                  Email link
                 </a>
               </li>
             </ul>
           </div>
           <div className="column">
-            <h4>GitHub</h4>
+            <h4>The Code</h4>
             <ul className="list-unstyled">
               <li>
                 <a
-                  className='social-icon-link github'
                   href='https://github.com/your-github-repo'
                   target='_blank'
                   rel='noreferrer'
-                  aria-label='GitHub'
+                  aria-label='GitHub repository'
                 >
-                  <i className='fab fa-github' />
+                  Github link
                 </a>
               </li>
             </ul>
