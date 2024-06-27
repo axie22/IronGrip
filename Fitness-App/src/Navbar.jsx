@@ -7,9 +7,9 @@ export default function Navigation() {
         <>
         <Navbar bg="secondary" variant="dark">
             <Container>
-            <Navbar.Brand href="/">Workout App</Navbar.Brand>
+            <Navbar.Brand href="/">Iron Grip</Navbar.Brand>
             <Nav className="me-auto">
-                <Nav.Link href="/Workout">WorkoutInput</Nav.Link>
+                <Nav.Link href="/Workout">Record Workout</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

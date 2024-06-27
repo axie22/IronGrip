@@ -6,8 +6,7 @@ const Footer = () => {
     <div className="main-footer">
       <div className="container">
         <div className="row">
-          <div className="column">
-            <h4>Contact Us</h4>
+          <div className="column">          
             <ul className="list-unstyled">
               <li>
                 <a
@@ -16,13 +15,13 @@ const Footer = () => {
                   rel="noreferrer"
                   aria-label="Contact"
                 >
-                  Email link
+                  <h4>Contact Us</h4>
                 </a>
               </li>
             </ul>
           </div>
           <div className="column">
-            <h4>The Code</h4>
+            
             <ul className="list-unstyled">
               <li>
                 <a
@@ -31,7 +30,7 @@ const Footer = () => {
                   rel='noreferrer'
                   aria-label='GitHub repository'
                 >
-                  Github link
+                  <h4>The Code</h4>
                 </a>
               </li>
             </ul>
@@ -40,7 +39,7 @@ const Footer = () => {
         <hr />
         <div className="row">
           <p className="column-small">
-            &copy;{new Date().getFullYear()} Fitness App
+            &copy;{new Date().getFullYear()} Iron Grip
           </p>
         </div>
       </div>
