@@ -1,3 +1,17 @@
 .nav-title {
     color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.nav-title:hover {
+    color: #124596 !important;
+    border-bottom: 2px solid #007bff !important;
+}
+
+.nav-brand:hover,
+.active-nav-title {
+    color: #124596 !important;
+    border-bottom: 2px solid #007bff !important;
 }

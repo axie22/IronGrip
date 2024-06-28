@@ -1,6 +1,5 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navigation() {
@@ -8,9 +7,12 @@ export default function Navigation() {
         <>
         <Navbar bg="light" variant="light">
             <Container>
-            <Navbar.Brand href="/">Iron Grip</Navbar.Brand>
+            <Navbar.Brand className="nav-brand" href="/">Iron Grip</Navbar.Brand>
             <Nav className="me-auto">
-                <Nav.Link className="nav-title" href="/Workout">Record Workout</Nav.Link>
+                {/** Navbar active link is not working */}
+                <Nav.Link as={NavLink} to="/workout" className="nav-title !important" activeClassName="active-nav-title">
+                    Record Workout
+                </Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
