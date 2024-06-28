@@ -6,7 +6,7 @@ import './Workout.css';
 function Workout() {
   return (
     <>
-      <div className='split-half'> 
+      <div className='workout-split-half'> 
         <div className='left-side'>
           <div className='title'>
             <Title />
