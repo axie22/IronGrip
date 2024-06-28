@@ -14,6 +14,7 @@ body {
 .left-side {
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .right-side {
@@ -32,4 +33,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
+}
+
+.add-set-card-button {
+    width: 150px;
+    border: 2px solid #124596;
+    color: #124596;
 }

@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SetCard from './SetCard';
 import Title from './Title';
 import './Workout.css';
 
 function Workout() {
+  const [setCards, setSetCards] = useState([
+    { exerciseName: "Bench Press", previous: "130 x 5" },
+    { exerciseName: "Incline Smith Bench Press", previous: "135 x 5" },
+  ]);
+
+  const addSetCard = () => {
+    setSetCards([...setCards, { exerciseName: "", previous: "" }]);
+  };
   return (
     <>
       <div className='workout-split-half'> 
@@ -12,15 +20,17 @@ function Workout() {
             <Title />
           </div>
           <div className='exercise-section'>
-            <SetCard
-              exerciseName="Bench Press"
-              previous="130 x 5"
-            />
-            <SetCard 
-              exerciseName="Incline Smith Bench Press"
-              previous="135 x 5"
-            />
-          </div>
+            {setCards.map((setCard, index) => (
+              <SetCard
+                key={index}
+                exerciseName={setCard.exerciseName}
+                previous={setCard.previous}
+              />
+            ))}
+            <button className='add-set-card-button' onClick={addSetCard}>
+              Add Exercise
+          </button>
+          </div>          
         </div>
         
         <div className='right-side'>
