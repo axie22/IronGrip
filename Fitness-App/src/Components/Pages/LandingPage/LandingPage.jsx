@@ -1,12 +1,21 @@
 import React from 'react';
 import './LandingPage.css';
+import LastWorkout from './LastWorkout';
+import ThisMonth from './ThisMonth';
 
 function LandingPage() {
   return (
-    <div>
-      <h1>This is the landing page</h1>
+    <div className="landing-page">
+      <div className='split-half'> 
+        <div>
+          <LastWorkout />
+        </div>
+        <div>
+          <ThisMonth />
+        </div>
+      </div>      
     </div>
   );
 }
 
-export default LandingPage
+export default LandingPage;
