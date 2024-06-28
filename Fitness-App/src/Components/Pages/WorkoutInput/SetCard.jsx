@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import {Button} from 'react-bootstrap';
 import './SetCard.css';
 
-function SetCard({ exerciseName, previous}) {
+function SetCard({ id, exerciseName, previous, deleteSetCard}) {
     const [rows, setRows] = useState([
         { id: 1, previous, weight: '', reps: '' },
         { id: 2, previous: '', weight: '', reps: '' },
@@ -32,8 +33,14 @@ function SetCard({ exerciseName, previous}) {
 
     return (
         <div className="set-card">
-            <div className="exercise-name">
-                <h2>{exerciseName}</h2>
+            <div className='exercise-header'>
+                <div className="exercise-name">
+                    <h2>{exerciseName}</h2>
+                    
+                </div>
+                <div className='delete-exercise-button'>
+                    <Button variant="danger" onClick={() => deleteSetCard(id)}>Delete</Button>
+                </div>
             </div>
             <div className="row">
                 <table className="set-card table">

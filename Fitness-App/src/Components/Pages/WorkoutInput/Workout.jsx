@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, Form, ListGroup } from 'react-bootstrap';
+import { Modal, Button, Form, ListGroup, Image } from 'react-bootstrap';
 import SetCard from './SetCard';
 import Title from './Title';
 import './Workout.css';
@@ -7,8 +7,8 @@ import axios from 'axios';
 
 function Workout() {
   const [setCards, setSetCards] = useState([
-    { exerciseName: "Bench Press", previous: "130 x 5" },
-    { exerciseName: "Incline Smith Bench Press", previous: "135 x 5" },
+    { id: 1, exerciseName: "Bench Press", previous: "130 x 5" },
+    { id: 2, exerciseName: "Incline Smith Bench Press", previous: "135 x 5" },
   ]);
 
   const [showModal, setShowModal] = useState(false);
@@ -28,7 +28,8 @@ function Workout() {
       In the future we'll query our data base for the most recent exercise of the given exercise name
       Allow custom exercise name or selected exercise
     */}
-    setSetCards([...setCards, { exerciseName: selectedExercise || newExerciseName, previous: "" }]);
+    console.log("Adding new set card with id:" + setCards.length + 1);
+    setSetCards([...setCards, { id: setCards.length + 1, exerciseName: selectedExercise || newExerciseName, previous: "" }]);
     setNewExerciseName("");
     setSelectedExercise("");
     handleCloseModal();
@@ -42,6 +43,11 @@ function Workout() {
     } else {
       setSuggestions([]);
     }
+  };
+
+  const deleteSetCard = (id) => {
+    console.log("Deleting Set Card with ID: " + id);
+    setSetCards(setCards.filter(card => card.id !== id));
   };
 
   const fetchSuggestions = async (query) => {
@@ -67,11 +73,13 @@ function Workout() {
             <Title />
           </div>
           <div className='exercise-section'>
-            {setCards.map((setCard, index) => (
+          {setCards.map((setCard) => (
               <SetCard
-                key={index}
+                key={setCard.id}
+                id={setCard.id}
                 exerciseName={setCard.exerciseName}
                 previous={setCard.previous}
+                deleteSetCard={deleteSetCard}
               />
             ))}
             <Button className='add-set-card-button' onClick={handleShowModal}>

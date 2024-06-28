@@ -96,3 +96,10 @@ body {
 .set-card .table input::placeholder {
   color: white;
 }
+
+.exercise-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+}
