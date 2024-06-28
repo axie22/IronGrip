@@ -26,7 +26,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li>
                 <a
-                  href='https://github.com/your-github-repo'
+                  href='https://github.com/axie22/FitnessApp.git'
                   target='_blank'
                   rel='noreferrer'
                   aria-label='GitHub repository'
