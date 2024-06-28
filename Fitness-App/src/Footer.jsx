@@ -21,7 +21,6 @@ const Footer = () => {
             </ul>
           </div>
           <div className="column">
-            
             <ul className="list-unstyled">
               <li>
                 <a
