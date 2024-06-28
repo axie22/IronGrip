@@ -35,8 +35,15 @@ body {
     flex-wrap: nowrap;
 }
 
+
 .add-set-card-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
     width: 150px;
     border: 2px solid #124596;
     color: #124596;
+    cursor: pointer;
+    align-self: center;
+    background-color: white;
 }
