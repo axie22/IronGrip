@@ -1,10 +1,10 @@
-# IronGrip
+# Iron Grip
 
 IronGrip is a workout tracking application designed to help users record their exercises, monitor progress, and receive exercise suggestions. Built using React and React-Bootstrap, IronGrip provides a user-friendly interface for logging workouts and adding new exercises.
 
 ## Table of Contents
 
-- [IronGrip](#irongrip)
+- [Iron Grip](#iron-grip)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Usage](#usage)
