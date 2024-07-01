@@ -46,6 +46,7 @@ function Workout() {
   };
 
   const handleExerciseNameChange = (e) => {
+    console.log("Handling Change")
     const value = e.target.value;
     setNewExerciseName(value);
     if (value.length > 2) {
@@ -67,7 +68,9 @@ function Workout() {
           'Authorization': `Token 43d3394872c166ce1394ebe8e900fa62a314596f`
         }
       });
-      const results = response.data.results || [];
+      const results = response.data.suggestions || [];
+      console.log("Results");
+      console.log(results);
       setSuggestions(results);
     } catch (error) {
       console.error('Error fetching exercise suggestions:', error);
