@@ -22,14 +22,24 @@ function Workout() {
     setSuggestions([]);
   };
 
+  // Generate a unique ID using the current timestamp and a random number
+  const generateUniqueId = () => {
+    return `${new Date().getTime()}-${Math.floor(Math.random() * 1000)}`;
+  };
+
+
   const handleAddSetCard = () => {
     {/**
       For now we'll set the previous to be empty 
       In the future we'll query our data base for the most recent exercise of the given exercise name
       Allow custom exercise name or selected exercise
     */}
-    console.log("Adding new set card with id:" + setCards.length + 1);
-    setSetCards([...setCards, { id: setCards.length + 1, exerciseName: selectedExercise || newExerciseName, previous: "" }]);
+    const newCard = {
+      id: generateUniqueId(),
+      exerciseName: selectedExercise || newExerciseName,
+      previous: "",
+    };
+    setSetCards([...setCards, newCard]);
     setNewExerciseName("");
     setSelectedExercise("");
     handleCloseModal();
