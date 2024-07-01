@@ -46,7 +46,6 @@ function Workout() {
   };
 
   const handleExerciseNameChange = (e) => {
-    console.log("Handling Change")
     const value = e.target.value;
     setNewExerciseName(value);
     if (value.length > 2) {
@@ -57,7 +56,6 @@ function Workout() {
   };
 
   const deleteSetCard = (id) => {
-    console.log("Deleting Set Card with ID: " + id);
     setSetCards(setCards.filter(card => card.id !== id));
   };
 
@@ -69,9 +67,7 @@ function Workout() {
         }
       });
       const results = response.data.suggestions || [];
-      console.log("Results");
-      console.log(results);
-      setSuggestions(results);
+      setSuggestions(results.slice(0, 5));
     } catch (error) {
       console.error('Error fetching exercise suggestions:', error);
       setSuggestions([]);
