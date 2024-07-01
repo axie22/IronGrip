@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form, ListGroup, Image } from 'react-bootstrap';
 import SetCard from './SetCard';
 import Title from './Title';
