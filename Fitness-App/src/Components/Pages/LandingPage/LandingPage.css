@@ -1,22 +1,25 @@
-/* LandingPage.css */
-
 .landing-page {
-  font-family: Arial, sans-serif;
+  font-family: Georgia, serif;
   text-align: center;
   background-color: #f0f0f0;
   height: 100vh;
+  padding: 2%;
+  box-sizing: border-box;
 }
 
 .split-half {
   display: flex;
   height: 100%;
+  flex-wrap: wrap;
 }
 
 .split-half > div {
-  flex: 1;
+  flex: 1 1 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1%;
+  box-sizing: border-box;
 }
 
 .split-half > div:first-child {
@@ -29,42 +32,44 @@
 
 .title {
   text-align: center;
-}
-
-/* Calendar styles */
-.calendar-container {
-  width: 90%;
-  margin: 20px auto;
-  background-color: #ffffff;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.8em; 
+  margin-bottom: 0.5em;
 }
 
 .calendar-header {
-  margin-bottom: 20px;
+  margin-bottom: 1%;
 }
 
 .calendar-header h2 {
+  font-weight: bold;
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.8em; 
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
+  gap: 0.5%; 
 }
 
 .calendar-weekday {
-  font-weight: bold;
   text-align: center;
+  font-size: 1em; 
+  font-weight: bold;
 }
 
 .calendar-day {
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 4px;
-  padding: 10px;
+  padding: 0.8em; 
   text-align: center;
+  box-sizing: border-box;
+  min-height: 70px; 
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .calendar-day.today {
@@ -76,11 +81,26 @@
 }
 
 .calendar-day .event {
-  margin-top: 5px;
-  font-size: 0.9em;
+  margin-top: 2px;
+  font-size: 0.75em;
   background-color: #007bff;
   color: #ffffff;
-  padding: 2px 4px;
+  padding: 0.3em 0.3em;
   border-radius: 4px;
   display: inline-block;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

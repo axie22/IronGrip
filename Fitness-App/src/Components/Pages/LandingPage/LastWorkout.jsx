@@ -13,8 +13,8 @@ function LastWorkout() {
         <Calendar
           events={[
             { date: subDays(new Date(), 1), title: "Code" },
-            { date: subDays(new Date(), 5), title: "Coding" },
-            { date: subDays(new Date(), 10), title: "Will code" },
+            { date: subDays(new Date(), 3), title: "Coding" },
+            { date: subDays(new Date(), 6), title: "Will code" },
           ]}
         />
       </div>
