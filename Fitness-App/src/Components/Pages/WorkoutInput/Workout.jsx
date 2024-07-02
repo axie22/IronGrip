@@ -22,14 +22,24 @@ function Workout() {
     setSuggestions([]);
   };
 
+  // Generate a unique ID using the current timestamp and a random number
+  const generateUniqueId = () => {
+    return `${new Date().getTime()}-${Math.floor(Math.random() * 1000)}`;
+  };
+
+
   const handleAddSetCard = () => {
     {/**
       For now we'll set the previous to be empty 
       In the future we'll query our data base for the most recent exercise of the given exercise name
       Allow custom exercise name or selected exercise
     */}
-    console.log("Adding new set card with id:" + setCards.length + 1);
-    setSetCards([...setCards, { id: setCards.length + 1, exerciseName: selectedExercise || newExerciseName, previous: "" }]);
+    const newCard = {
+      id: generateUniqueId(),
+      exerciseName: selectedExercise || newExerciseName,
+      previous: "",
+    };
+    setSetCards([...setCards, newCard]);
     setNewExerciseName("");
     setSelectedExercise("");
     handleCloseModal();
@@ -46,7 +56,6 @@ function Workout() {
   };
 
   const deleteSetCard = (id) => {
-    console.log("Deleting Set Card with ID: " + id);
     setSetCards(setCards.filter(card => card.id !== id));
   };
 
@@ -57,8 +66,8 @@ function Workout() {
           'Authorization': `Token 43d3394872c166ce1394ebe8e900fa62a314596f`
         }
       });
-      const results = response.data.results || [];
-      setSuggestions(results);
+      const results = response.data.suggestions || [];
+      setSuggestions(results.slice(0, 5));
     } catch (error) {
       console.error('Error fetching exercise suggestions:', error);
       setSuggestions([]);
