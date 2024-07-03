@@ -5,27 +5,21 @@ import './Navbar.css';
 export default function Navigation() {
     return (
         <>
-        <Navbar bg="light" variant="light" className='custom-nav-color !important'>
-            <Container>
-            <Navbar.Brand className="nav-brand" href="/">Iron Grip</Navbar.Brand>
-            <Nav className="me-auto">
-                {/** Navbar active link is not working
-                 * activeclassName="active-nav-title"
-                 */
-                    
-                }
-                <Nav.Link as={NavLink} to="/workout" className="nav-title !important" >
-                    Record Workout
-                </Nav.Link>
-            </Nav>
-            <Navbar.Collapse         
-                className="justify-content-end">
-                <Navbar.Text>
-                Weekly Workout Time: 10 hours
-                </Navbar.Text>
-            </Navbar.Collapse>
-            </Container>
-        </Navbar>
+            <Navbar bg="light" variant="light" className='custom-nav-color'>
+                <Container>
+                    <Navbar.Brand className="nav-brand" href="/">Iron Grip</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link as={NavLink} to="/workout" className="nav-title" activeClassName="active-nav-title">
+                            Record Workout
+                        </Nav.Link>
+                    </Nav>
+                    <Navbar.Collapse className="justify-content-end">
+                        <Navbar.Text>
+                            Weekly Workout Time: 10 hours
+                        </Navbar.Text>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         </>
     );
 }
