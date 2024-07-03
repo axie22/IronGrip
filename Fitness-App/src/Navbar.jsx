@@ -17,7 +17,13 @@ export default function Navigation() {
                 <Nav.Link as={NavLink} to="/workout" className="nav-title !important" >
                     Record Workout
                 </Nav.Link>
-                </Nav>
+            </Nav>
+            <Navbar.Collapse         
+                className="justify-content-end">
+                <Navbar.Text>
+                Weekly Workout Time: 10 hours
+                </Navbar.Text>
+            </Navbar.Collapse>
             </Container>
         </Navbar>
         </>
