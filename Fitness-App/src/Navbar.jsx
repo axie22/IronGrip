@@ -5,7 +5,7 @@ import './Navbar.css';
 export default function Navigation() {
     return (
         <>
-        <Navbar bg="light" variant="light">
+        <Navbar bg="light" variant="light" className='custom-nav-color !important'>
             <Container>
             <Navbar.Brand className="nav-brand" href="/">Iron Grip</Navbar.Brand>
             <Nav className="me-auto">

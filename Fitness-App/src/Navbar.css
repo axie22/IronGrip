@@ -3,6 +3,8 @@
     text-decoration: none;
     padding: 10px 15px;
     display: inline-block;
+    
+    
 }
 
 .nav-title:hover {
@@ -14,4 +16,8 @@
 .active-nav-title {
     color: #124596 !important;
     border-bottom: 2px solid #007bff !important;
+}
+
+.custom-nav-color {
+    background-color: #0353A4 !important;
 }

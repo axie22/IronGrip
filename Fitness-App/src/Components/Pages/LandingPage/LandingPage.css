@@ -2,6 +2,7 @@
 
 body {
     font-family: "Roboto Condensed", sans-serif;
+    color: #0582CA;
 }
 
 .landing-page {
@@ -26,7 +27,7 @@ body {
   padding: 1%;
   box-sizing: border-box;
 }
-
+/*
 .split-half > div:first-child {
   background-color: #f0f0f0;
 }
@@ -34,6 +35,7 @@ body {
 .split-half > div:last-child {
   background-color: #ffffff;
 }
+*/
 
 .title {
   text-align: center;
@@ -64,7 +66,7 @@ body {
 }
 
 .calendar-day {
-  border: 1px solid #000000;
+  border: 2px solid #0582CA;
   border-radius: 4px;
   padding: 0.8em; 
   text-align: center;
