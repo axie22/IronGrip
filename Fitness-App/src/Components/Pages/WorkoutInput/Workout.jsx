@@ -74,6 +74,19 @@ function Workout() {
     }
   };
 
+  const handleUpdate = (id, data) => {
+    setSetCards(prevSetCards =>
+      prevSetCards.map(card =>
+        card.id === id ? {...card, ...data} : card
+      )
+    );
+  };
+
+  const handleSubmit = () => {
+    console.log("Submitting the following data:");
+    console.log(setCards);
+  };
+
   return (
     <>
       <div className='workout-split-half'> 
@@ -89,10 +102,14 @@ function Workout() {
                 exerciseName={setCard.exerciseName}
                 previous={setCard.previous}
                 deleteSetCard={deleteSetCard}
+                onUpdate={handleUpdate}
               />
             ))}
             <Button className='add-set-card-button' onClick={handleShowModal}>
               Add Exercise
+            </Button>
+            <Button variant="success" className='submit-workout-button' onClick={handleSubmit}>
+              Finish
             </Button>
           </div>          
         </div>

@@ -41,9 +41,30 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     width: 150px;
-    border: 2px solid #124596;
-    color: #124596;
+    border: 2px solid #0582CA;
+    color: #0582CA;
     cursor: pointer;
     align-self: center;
     background-color: white;
+}
+
+.add-set-card-button:hover {
+    color: white;
+    background-color: #0582CA;
+    border: 2px solid #0582CA;
+}
+
+.submit-workout-button {
+    margin: 15px !important;
+    width: 100px !important;
+    background-color: #007bff !important;
+    border: none;
+}
+
+.submit-workout-button:hover {
+    background-color: #026ee1 !important;
+}
+
+.submit-workout-button:active {
+    background-color: #0065d2 !important;
 }

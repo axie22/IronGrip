@@ -9,7 +9,7 @@ export default function Navigation() {
                 <Container>
                     <Navbar.Brand className="nav-brand" href="/">Iron Grip</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link as={NavLink} to="/workout" className="nav-title" activeClassName="active-nav-title">
+                        <Nav.Link as={NavLink} to="/workout" className="nav-title">
                             Record Workout
                         </Nav.Link>
                     </Nav>

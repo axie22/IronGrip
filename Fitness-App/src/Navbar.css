@@ -11,14 +11,14 @@
 }
 
 .navbar .nav-title:hover {
-    color: #124596 !important;
-    border-bottom: 2px solid #007bff !important; 
+    color: #cfcfcf !important;
+    border-bottom: 2px solid #ffffff !important; 
 }
 
-.navbar .nav-brand:hover,
-.navbar .active-nav-title {
-    color: #124596 !important; 
-    border-bottom: 2px solid #007bff !important; 
+
+.navbar .nav-brand:hover {
+    color: #cfcfcf !important; 
+    border-bottom: 2px solid #ffffff !important; 
 }
 
 .navbar.custom-nav-color {

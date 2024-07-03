@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {Button} from 'react-bootstrap';
 import './SetCard.css';
 
-function SetCard({ id, exerciseName, previous, deleteSetCard}) {
+function SetCard({ id, exerciseName, previous, deleteSetCard, onUpdate}) {
     const [rows, setRows] = useState([
         { id: 1, previous, weight: '', reps: '' },
         { id: 2, previous: '', weight: '', reps: '' },
         { id: 3, previous: '', weight: '', reps: '' },
         { id: 4, previous: '', weight: '', reps: '' },
     ]);
+
+    useEffect(() => {
+        if (typeof onUpdate === 'function') {
+            onUpdate(id, { exerciseName, rows });
+        }
+    }, [rows]);
 
     const updateRowIds = (rows) => {
         return rows.map((row, index) => ({ ...row, id: index + 1 }));
