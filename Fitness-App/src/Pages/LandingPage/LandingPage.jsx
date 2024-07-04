@@ -1,7 +1,7 @@
 import React from 'react';
-import './LandingPage.css';
 import LastWorkout from './LastWorkout';
 import ThisMonth from './ThisMonth';
+import '../../assets/LandingPage.css';
 
 function LandingPage() {
   return (

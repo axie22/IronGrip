@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
-import LandingPage from './Components/Pages/LandingPage/LandingPage.jsx'; 
-import Workout from "./Components/Pages/WorkoutInput/Workout.jsx";
-import SetCard from "./Components/Pages/WorkoutInput/SetCard.jsx";
+import LandingPage from './Pages/LandingPage/LandingPage.jsx';
+import Workout from './Pages/WorkoutInput/Workout.jsx';
+import SetCard from './Pages/WorkoutInput/SetCard.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import './assets/index.css';
 
 function Main() {
   return (

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form, ListGroup, Image } from 'react-bootstrap';
 import SetCard from './SetCard';
 import Title from './Title';
-import './Workout.css';
 import axios from 'axios';
+import '../../assets/Workout.css';
 
 function Workout() {
   const [setCards, setSetCards] = useState([

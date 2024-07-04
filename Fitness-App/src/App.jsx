@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from "./Footer.jsx";
 import Navbar from "./Navbar.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './assets/App.css';
 
 function App() {
   return (

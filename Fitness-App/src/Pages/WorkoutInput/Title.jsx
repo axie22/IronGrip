@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import './Title.css';
+import '../../assets/Title.css';
 
 function getTitle() {
     {/* Get date in MM/DD/YYYY format with padding */}

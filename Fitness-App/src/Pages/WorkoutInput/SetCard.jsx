@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {Button} from 'react-bootstrap';
-import './SetCard.css';
+import '../../assets/SetCard.css';
 
 function SetCard({ id, exerciseName, previous, deleteSetCard, onUpdate}) {
     const [rows, setRows] = useState([
