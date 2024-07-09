@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, getDay, isToday, isSameDay } from "date-fns";
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, getDay, isToday } from "date-fns";
 import clsx from 'clsx';
 
 const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -11,9 +11,10 @@ interface Event {
 
 interface CalendarProps {
     events: Event[];
+    onDateClick: (date: Date) => void;
 }
 
-const Calendar: React.FC<CalendarProps> = ({ events }) => {
+const Calendar: React.FC<CalendarProps> = ({ events, onDateClick }) => {
     const currentDate = new Date();
     const firstOfMonth = startOfMonth(currentDate);
     const lastOfMonth = endOfMonth(currentDate);
@@ -56,12 +57,13 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
                     const dateKey = format(day, "yyyy-MM-dd");
                     const todaysEvents = eventsByDate[dateKey] || [];
                     return (
-                        <div
+                        <button
                             key={index}
                             className={clsx("calendar-day", {
                                 "today": isToday(day),
                                 "has-event": todaysEvents.length > 0,
                             })}
+                            onClick={() => onDateClick(day)}
                         >
                             {format(day, "d")}
                             {todaysEvents.map((event) => (
@@ -69,7 +71,7 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
                                     {event.title}
                                 </div>
                             ))}
-                        </div>
+                        </button>
                     );
                 })}
             </div>
