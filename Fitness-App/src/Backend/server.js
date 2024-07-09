@@ -11,13 +11,16 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
-    console.log("Here")
+app.get('/', logger, (req, res) => {
     res.render("index", {text : "Test"})
 })
 
 app.use('/users', userRouter);
 
+function logger(req, res, next) {
+    console.log(req.originalUrl)
+    next()
+}
 
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
