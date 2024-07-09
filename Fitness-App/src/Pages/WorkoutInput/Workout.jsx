@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Modal, Button, Form, ListGroup, Image } from 'react-bootstrap';
 import SetCard from './SetCard';
 import Title from './Title';
+import Summary from './Summary';
 import axios from 'axios';
 import '../../assets/Workout.css';
 
@@ -12,9 +13,13 @@ function Workout() {
   ]);
 
   const [showModal, setShowModal] = useState(false);
+  const [showSummary, setShowSummary] = useState(false);
   const [newExerciseName, setNewExerciseName] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [selectedExercise, setSelectedExercise] = useState("");
+  const [workoutStartTime, setWorkoutStartTime] = useState(null);
+  const [workoutDuration, setWorkoutDuration] = useState(0);
+  const [exerciseCount, setExerciseCount] = useState(0);
 
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => {
@@ -85,7 +90,21 @@ function Workout() {
   const handleSubmit = () => {
     console.log("Submitting the following data:");
     console.log(setCards);
+
+    const endTime = new Date();
+    const duration = Math.round((endTime - workoutStartTime) / 60000); // convert ms to minutes
+    setWorkoutDuration(duration);
+    setExerciseCount(setCards.length);
+    setShowSummary(true);
+
+    setSetCards([]);
   };
+
+  const handleSummaryClose = () => setShowSummary(false);
+
+  useEffect(() => {
+    setWorkoutStartTime(new Date());
+  }, []);
 
   return (
     <>
@@ -166,6 +185,13 @@ function Workout() {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <Summary 
+        show={showSummary} 
+        handleClose={handleSummaryClose} 
+        workoutDuration={workoutDuration}
+        exerciseCount={exerciseCount} 
+      />
     </>
   );
 }
