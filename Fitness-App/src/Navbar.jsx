@@ -14,9 +14,14 @@ export default function Navigation() {
                         </Nav.Link>
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
-                        <Navbar.Text>
+                        <Navbar.Text className="me-3">
                             Weekly Workout Time: 10 hours
                         </Navbar.Text>
+                        <Nav>
+                            <Nav.Link as={NavLink} to="/user-profile" className="nav-title">
+                                User Profile
+                            </Nav.Link>
+                        </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
