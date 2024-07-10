@@ -5,7 +5,7 @@ import '../../assets/LastWorkout.css';
 
 function LastWorkout() {
   const handleDateClick = (date) => {
-    console.log('Date clicked:', date); // Eventual navigation to workout card containers
+    console.log('Date clicked:', date); // Eventual navigation to backend workout card containers
   };
 
   return (
