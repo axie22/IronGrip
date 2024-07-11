@@ -12,7 +12,6 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB connection
 const mongoURI = 'mongodb+srv://alexxie9667:oiCGMvRPPWiVbCwG@irongripdb.8qmk1ft.mongodb.net/';
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
@@ -25,22 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(workoutRoutes);
-
-const workoutSchema = new mongoose.Schema({
-  exercises: [
-    {
-      id: String,
-      exerciseName: String,
-      previous: String,
-      rows: Array
-    }
-  ],
-  duration: Number,
-  date: { type: Date, default: Date.now }
-});
-
-const Workout = mongoose.model('Workout', workoutSchema);
-
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
