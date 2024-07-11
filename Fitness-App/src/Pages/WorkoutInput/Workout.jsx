@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Modal, Button, Form, ListGroup, Image } from 'react-bootstrap';
-import SetCard from './SetCard';
-import Title from './Title';
-import Summary from './Summary';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Button, Form, Image, ListGroup, Modal } from 'react-bootstrap';
 import '../../assets/Workout.css';
+import SetCard from './SetCard';
+import Summary from './Summary';
+import Title from './Title';
 
 function Workout() {
   const [setCards, setSetCards] = useState([
@@ -87,7 +87,7 @@ function Workout() {
     );
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     console.log("Submitting the following data:");
     console.log(setCards);
 
@@ -96,6 +96,16 @@ function Workout() {
     setWorkoutDuration(duration);
     setExerciseCount(setCards.length);
     setShowSummary(true);
+
+    try {
+      await axios.post('http://localhost:3000/api/workouts', {  
+        exercises: setCards,
+        duration: duration
+      });
+      console.log('Workout data saved successfully');
+    } catch (error) {
+      console.error('Error saving workout data:', error);
+    }
 
     setSetCards([]);
   };
