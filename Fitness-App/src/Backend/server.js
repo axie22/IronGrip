@@ -4,45 +4,27 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import workoutRoutes from './routes/workouts.js';
 
 const app = express();
 const port = 3000;
 
-app.use(cors());  
+app.use(cors());
 app.use(bodyParser.json());
 
-// My connection string for MongoDB
+// MongoDB connection
 const mongoURI = 'mongodb+srv://alexxie9667:oiCGMvRPPWiVbCwG@irongripdb.8qmk1ft.mongodb.net/';
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
-
-const workoutSchema = new mongoose.Schema({
-  exercises: Array,
-  duration: Number,
-  date: { type: Date, default: Date.now }
-});
-  
-
-const Workout = mongoose.model('Workout', workoutSchema);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.post('/api/workouts', async (req, res) => {
-  try {
-    const { exercises, duration } = req.body;
-    const newWorkout = new Workout({ exercises, duration });
-    await newWorkout.save();
-    res.status(201).send('Workout data saved successfully');
-  } catch (error) {
-    res.status(500).send('Server error');
-  }
-});
 
-  
+app.use(workoutRoutes);
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
