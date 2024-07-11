@@ -97,8 +97,9 @@ function Workout() {
     setExerciseCount(setCards.length);
     setShowSummary(true);
 
+    /* Not finding file path*/
     try {
-      await axios.post('http://localhost:3000/api/workouts', {  
+      await axios.post('http://localhost:3000/ExerciseDB/ExerciseDB', {  
         exercises: setCards,
         duration: duration
       });

@@ -18,12 +18,29 @@ mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(workoutRoutes);
+
+const workoutSchema = new mongoose.Schema({
+  exercises: [
+    {
+      id: String,
+      exerciseName: String,
+      previous: String,
+      rows: Array
+    }
+  ],
+  duration: Number,
+  date: { type: Date, default: Date.now }
+});
+
+const Workout = mongoose.model('Workout', workoutSchema);
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
