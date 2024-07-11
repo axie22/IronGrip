@@ -99,7 +99,7 @@ function Workout() {
 
     /* Not finding file path*/
     try {
-      await axios.post('http://localhost:3000/ExerciseDB/ExerciseDB', {  
+      await axios.post('http://localhost:3000/api/workouts', {  
         exercises: setCards,
         duration: duration
       });
