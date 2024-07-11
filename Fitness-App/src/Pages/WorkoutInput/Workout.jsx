@@ -92,7 +92,7 @@ function Workout() {
     console.log(setCards);
 
     const endTime = new Date();
-    const duration = Math.round((endTime - workoutStartTime) / 60000); // convert ms to minutes
+    const duration = Math.round((endTime - workoutStartTime) / 60000);
     setWorkoutDuration(duration);
     setExerciseCount(setCards.length);
     setShowSummary(true);

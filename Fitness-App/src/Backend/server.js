@@ -17,18 +17,12 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-  const workoutSchema = new mongoose.Schema({
-    exercises: [
-      {
-        id: String,
-        exerciseName: String,
-        previous: String,
-        rows: Array
-      }
-    ],
-    duration: Number,
-    date: { type: Date, default: Date.now }
-  });
+const workoutSchema = new mongoose.Schema({
+  exercises: Array,
+  duration: Number,
+  date: { type: Date, default: Date.now }
+});
+  
 
 const Workout = mongoose.model('Workout', workoutSchema);
 
@@ -37,17 +31,16 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/api/workouts', async (req, res) => {
-    try {
-        const { exercises, duration } = req.body;
-        console.log('Received workout data:', req.body);
-        const newWorkout = new Workout({ exercises, duration });
-        await newWorkout.save();
-        res.status(201).send('Workout data saved successfully');
-    } catch (error) {
-        console.log('Error saving workout data:', error);
-        res.status(500).send('Server error');
-    }
+  try {
+    const { exercises, duration } = req.body;
+    const newWorkout = new Workout({ exercises, duration });
+    await newWorkout.save();
+    res.status(201).send('Workout data saved successfully');
+  } catch (error) {
+    res.status(500).send('Server error');
+  }
 });
+
   
 
 app.listen(port, () => {
