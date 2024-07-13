@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.UserCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.gradient {
+    background: linear-gradient(to bottom, #4b6cb7, #182848);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    color: white;
+}
+
+.profile-down img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .profile-title {
+        font-size: 20px;
+    }
+
+    .profile-description {
+        font-size: 14px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}
