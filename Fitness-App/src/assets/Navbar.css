@@ -1,5 +1,7 @@
+
 .navbar .nav-title {
     color: white !important;
+    font-size: 18px;
     text-decoration: none;
     padding: 10px 15px;
     display: inline-block;
@@ -8,6 +10,7 @@
 .navbar .nav-title,
 .navbar .nav-brand {
     color: white !important;
+    text-decoration: none;
 }
 
 .navbar .nav-title:hover {
@@ -18,7 +21,7 @@
 
 .navbar .nav-brand:hover {
     color: #cfcfcf !important; 
-    border-bottom: 2px solid #ffffff !important; 
+    border-bottom: 3px solid #ffffff !important; 
 }
 
 .navbar.custom-nav-color {
