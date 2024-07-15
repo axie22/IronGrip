@@ -6,7 +6,7 @@ import profile_icon from './assets/UserProfile.jpg';
 export default function Navigation() {
     return (
         <>
-            <Navbar bg="light" variant="light" className='custom-nav-color'>
+            <Navbar className='custom-nav-color'>
                 <Container>
                     <Navbar.Brand className="nav-brand" href="/">Iron Grip</Navbar.Brand>
                     <Nav className="me-auto">
@@ -19,12 +19,13 @@ export default function Navigation() {
                             Weekly Workout Time: 10 hours
                         </Navbar.Text>
                         <Nav>
-                            <Nav.Link as={NavLink} to="/user-profile">
+                            <Nav.Link as={NavLink} to="/user-profile" className="profile-link">
                                 <Image 
                                     src={profile_icon} 
                                     alt="User Profile Image" 
-                                    style={{ borderRadius: "50%", height: "40px", width: "40px" }}
+                                    className="profile-image"
                                 />
+                                <div className="profile-username">Tom Platz</div>
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
