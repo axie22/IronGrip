@@ -1,6 +1,7 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import './assets/Navbar.css';
+import profile_icon from './assets/UserProfile.jpg';
 
 export default function Navigation() {
     return (
@@ -18,8 +19,12 @@ export default function Navigation() {
                             Weekly Workout Time: 10 hours
                         </Navbar.Text>
                         <Nav>
-                            <Nav.Link as={NavLink} to="/user-profile" className="nav-title">
-                                User Profile
+                            <Nav.Link as={NavLink} to="/user-profile">
+                                <Image 
+                                    src={profile_icon} 
+                                    alt="User Profile Image" 
+                                    style={{ borderRadius: "50%", height: "40px", width: "40px" }}
+                                />
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
