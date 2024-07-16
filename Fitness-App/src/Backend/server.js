@@ -5,6 +5,8 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import workoutRoutes from './routes/workouts.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -12,7 +14,8 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-const mongoURI = 'mongodb+srv://alexxie9667:oiCGMvRPPWiVbCwG@irongripdb.8qmk1ft.mongodb.net/';
+const mongoURI = process.env.MONGO_URI;
+console.log('Mongo URI:', mongoURI);
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
