@@ -5,6 +5,7 @@ import '../../assets/Workout.css';
 import SetCard from './SetCard';
 import Summary from './Summary';
 import Title from './Title';
+import { AUTH_TOKEN } from '../../config.js';
 
 function Workout() {
   const [setCards, setSetCards] = useState([
@@ -67,8 +68,10 @@ function Workout() {
   const fetchSuggestions = async (query) => {
     try {
       const response = await axios.get(`https://wger.de/api/v2/exercise/search/?term=${query}`, {
+        
         headers: {
-          'Authorization': `Token 43d3394872c166ce1394ebe8e900fa62a314596f`
+          
+          'Authorization': `Token ${AUTH_TOKEN}`
         }
       });
       const results = response.data.suggestions || [];

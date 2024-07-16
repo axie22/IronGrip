@@ -15,7 +15,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const mongoURI = process.env.MONGO_URI;
-console.log('Mongo URI:', mongoURI);
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
