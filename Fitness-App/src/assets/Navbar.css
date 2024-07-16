@@ -1,33 +1,64 @@
-
 .navbar .nav-title {
-    color: white !important;
     font-size: 18px;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
+}
+
+.navbar .nav-brand {
+    font-size: 24px;
 }
 
 .navbar .nav-title,
 .navbar .nav-brand {
     color: white !important;
     text-decoration: none;
+    display: inline-block;
 }
 
-.navbar .nav-title:hover {
+.navbar .nav-title:hover,
+.navbar .profile-link:hover {
     color: #cfcfcf !important;
-    border-bottom: 2px solid #ffffff !important; 
+    border-bottom: 2px solid #ffffff !important;
+    text-decoration: none;
 }
-
 
 .navbar .nav-brand:hover {
-    color: #cfcfcf !important; 
-    border-bottom: 3px solid #ffffff !important; 
+    color: #cfcfcf !important;
+    border-bottom: 2px solid #ffffff !important;
+    text-decoration: none;
 }
 
 .navbar.custom-nav-color {
-    background-color: #0353A4 !important; 
+    background-color: #0353A4 !important;
 }
 
 .navbar .navbar-text {
     color: white !important;
+}
+
+.profile-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.profile-link:hover {
+    color: #cfcfcf !important;
+    border-bottom: 2px solid #ffffff !important;
+    text-decoration: none;
+}
+
+.profile-image {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: block;
+}
+
+.profile-username {
+    margin-top: 2px;
+    font-size: 0.65rem;
+    text-align: center;
+    color: white !important;
+    display: block;
 }
