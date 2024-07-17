@@ -5,6 +5,7 @@ import '../../assets/Workout.css';
 import SetCard from './SetCard';
 import Summary from './Summary';
 import Title from './Title';
+import ProgressGraph from '../../Components/ProgressGraph.jsx';
 import { AUTH_TOKEN } from '../../config.js';
 
 function Workout() {
@@ -21,6 +22,7 @@ function Workout() {
   const [workoutStartTime, setWorkoutStartTime] = useState(null);
   const [workoutDuration, setWorkoutDuration] = useState(0);
   const [exerciseCount, setExerciseCount] = useState(0);
+  const [progressData, setProgressData] = useState([]);
 
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => {
@@ -112,12 +114,23 @@ function Workout() {
     }
 
     setSetCards([]);
+    fetchProgressData();
+  };
+
+  const fetchProgressData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/api/progress');
+      setProgressData(response.data);
+    } catch (error) {
+      console.error('Error fetching progress data:', error);
+    }
   };
 
   const handleSummaryClose = () => setShowSummary(false);
 
   useEffect(() => {
     setWorkoutStartTime(new Date());
+    fetchProgressData();
   }, []);
 
   return (
@@ -148,9 +161,17 @@ function Workout() {
         </div>
         
         <div className='right-side'>
-          <h1>Other half</h1>
+          <div className='data-title'>
+            <h1 className='progress-title'>Progress</h1>
+          </div>         
+          <div>
+            <ProgressGraph data={progressData} />
+          </div>
+          
         </div>
       </div>
+
+
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Add New Exercise</Modal.Title>
