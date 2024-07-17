@@ -17,9 +17,7 @@ body {
     margin-bottom: 40px;
 }
 
-.right-side {
-    display: flex;
-}
+
 
 .title {
     display: flex;
@@ -67,4 +65,20 @@ body {
 
 .submit-workout-button:active {
     background-color: #0065d2 !important;
+}
+
+.progress-title {
+    font-size: 30px ;
+}
+
+.data-title {
+    margin-bottom: 15px;
+    
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
 }
