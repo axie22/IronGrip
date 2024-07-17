@@ -1,6 +1,5 @@
 /* MonthlyCalendar with module for less Calendar implementation conflict */
 
-
 .monthlyCalendarContainer {
     transform: scale(0.75);
     transform-origin: top left;

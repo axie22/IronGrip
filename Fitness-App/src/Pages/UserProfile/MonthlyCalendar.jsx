@@ -1,6 +1,6 @@
 import React from 'react';
 import { subDays } from 'date-fns';
-import Calendar from '../LandingPage/Calendar.tsx';
+import Calendar from '../../Components/Calendar';
 import styles from '../../assets/MonthlyCalendar.module.css';
 
 function MonthlyCalendar() {
