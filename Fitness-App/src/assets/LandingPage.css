@@ -36,6 +36,7 @@ body {
 
 .calendar-header {
   margin-bottom: 1%;
+  text-align: center;
 }
 
 .calendar-header h2 {

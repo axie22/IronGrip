@@ -1,6 +1,6 @@
 import React from 'react';
 import { subDays } from 'date-fns';
-import Calendar from './Calendar';
+import Calendar from '../../Components/Calendar';
 import '../../assets/LastWorkout.css';
 
 function LastWorkout() {
