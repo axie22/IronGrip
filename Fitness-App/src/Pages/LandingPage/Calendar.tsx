@@ -12,9 +12,10 @@ interface Event {
 interface CalendarProps {
     events: Event[];
     onDateClick: (date: Date) => void;
+    className?: string; // className prop
 }
 
-const Calendar: React.FC<CalendarProps> = ({ events, onDateClick }) => {
+const Calendar: React.FC<CalendarProps> = ({ events, onDateClick, className }) => {
     const currentDate = new Date();
     const firstOfMonth = startOfMonth(currentDate);
     const lastOfMonth = endOfMonth(currentDate);
@@ -38,7 +39,7 @@ const Calendar: React.FC<CalendarProps> = ({ events, onDateClick }) => {
     }, [events]);
 
     return (
-        <div className="calendar-container">
+        <div className={clsx("calendar-container", className)}> {/* Combine default and additional class names */}
             <div className="calendar-header">
                 <h2>{format(currentDate, "MMMM yyyy")}</h2>
             </div>

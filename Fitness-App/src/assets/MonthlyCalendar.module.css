@@ -1,0 +1,24 @@
+/* MonthlyCalendar with module for less Calendar implementation conflict */
+
+
+.monthlyCalendarContainer {
+    transform: scale(0.75);
+    transform-origin: top left;
+    width: 133.33%;
+}
+
+/* Apply standardized blue color to all items within the monthly calendar container */
+.monthlyCalendarContainer,
+.monthlyCalendarContainer .calendar-header,
+.monthlyCalendarContainer .calendar-header h2,
+.monthlyCalendarContainer .calendar-grid,
+.monthlyCalendarContainer .calendar-weekday,
+.monthlyCalendarContainer .calendar-day,
+.monthlyCalendarContainer .calendar-day.today,
+.monthlyCalendarContainer .calendar-day.has-event,
+.monthlyCalendarContainer .calendar-day .event,
+.monthlyCalendarContainer .calendar-day:hover,
+.monthlyCalendarContainer .calendar-day.empty {
+    color: #3457D5;
+    border-color: #3457D5;
+}
