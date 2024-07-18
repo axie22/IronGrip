@@ -17,6 +17,7 @@ IronGrip is a workout tracking application designed to help users record their e
 - **Dynamic Exercise Suggestions**: Integration with the wger API to provide exercise suggestions based on user input.
 - **Responsive Design**: User interface designed to work seamlessly on different devices.
 - **Exercise Management**: Add, edit, and delete exercises easily within the app.
+- **Progress Visualization**: Graphical representation of user progress over time.
 
 ## Usage
 
@@ -33,6 +34,9 @@ IronGrip is a workout tracking application designed to help users record their e
 
 3. Deleting an Exercise:
    - Click the "Delete" button on the exercise card to remove it from your workout log.
+
+4. Visualizig Progress
+   - On the right half of the workout input page, a graph will display your progress over time
 
 ## API Integration
 
