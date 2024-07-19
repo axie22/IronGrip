@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-const ProgressGraph = ({ data }) => {
+const ExerciseGraph = ({ exerciseName, data }) => {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const ProgressGraph = ({ data }) => {
       .padding(0.1);
 
     const y = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.value)]).nice()
+      .domain([0, d3.max(data, d => d.weight)]).nice()
       .range([height - margin.bottom, margin.top]);
 
     const xAxis = g => g
@@ -36,8 +36,8 @@ const ProgressGraph = ({ data }) => {
       .data(data)
       .enter().append("rect")
         .attr("x", d => x(d.date))
-        .attr("y", d => y(d.value))
-        .attr("height", d => y(0) - y(d.value))
+        .attr("y", d => y(d.weight))
+        .attr("height", d => y(0) - y(d.weight))
         .attr("width", x.bandwidth())
         .attr("fill", "steelblue");
 
@@ -46,15 +46,40 @@ const ProgressGraph = ({ data }) => {
   }, [data]);
 
   return (
-    <svg
-      ref={svgRef}
-      style={{
-        width: 500,
-        height: 300,
-        marginRight: "0px",
-        marginLeft: "0px",
-      }}
-    ></svg>
+    <div>
+      <h2>{exerciseName}</h2>
+      <svg
+        ref={svgRef}
+        style={{
+          width: 500,
+          height: 300,
+          marginRight: "0px",
+          marginLeft: "0px",
+        }}
+      ></svg>
+    </div>
+  );
+};
+
+const ProgressGraph = ({ data }) => {
+  // Transform the raw workout data into a format suitable for the graph
+  const transformedData = data.flatMap(workout => 
+    workout.exercises.map(exercise => ({
+      date: new Date(workout.date),
+      exerciseName: exercise.exerciseName,
+      weight: Math.max(...exercise.rows.map(row => parseFloat(row.weight) || 0)) // Find the highest weight
+    }))
+  );
+
+  // Group data by exercise name
+  const groupedData = d3.groups(transformedData, d => d.exerciseName);
+
+  return (
+    <div>
+      {groupedData.map(([exerciseName, exerciseData]) => (
+        <ExerciseGraph key={exerciseName} exerciseName={exerciseName} data={exerciseData} />
+      ))}
+    </div>
   );
 };
 
