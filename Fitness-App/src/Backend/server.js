@@ -25,7 +25,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use(workoutRoutes);
+app.use('/api/workouts', workoutRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
