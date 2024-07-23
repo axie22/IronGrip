@@ -23,7 +23,7 @@ const ExerciseGraph = ({ exerciseName, data }) => {
 
     const xAxis = g => g
       .attr("transform", `translate(0,${height - margin.bottom})`)
-      .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%b %d")))
+      .call(d3.axisBottom(x).tickFormat(d => d3.timeFormat("%b %d")(new Date(d))))
       .attr("font-size", '12px');
 
     const yAxis = g => g
@@ -62,17 +62,14 @@ const ExerciseGraph = ({ exerciseName, data }) => {
 };
 
 const ProgressGraph = ({ data }) => {
-  // Transform the raw workout data into a format suitable for the graph
-  const transformedData = data.flatMap(workout => 
-    workout.exercises.map(exercise => ({
-      date: new Date(workout.date),
-      exerciseName: exercise.exerciseName,
-      weight: Math.max(...exercise.rows.map(row => parseFloat(row.weight) || 0)) // Find the highest weight
-    }))
-  );
+  if (!data || !Array.isArray(data)) {
+    return <div>No data available</div>;
+  }
+
+  
 
   // Group data by exercise name
-  const groupedData = d3.groups(transformedData, d => d.exerciseName);
+  const groupedData = d3.groups(data, d => d.exerciseName);
 
   return (
     <div>

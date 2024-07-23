@@ -7,6 +7,7 @@ import Summary from './Summary';
 import Title from './Title';
 import ProgressGraph from '../../Components/ProgressGraph.jsx';
 import { AUTH_TOKEN } from '../../config.js';
+import * as d3 from 'd3';
 
 function Workout() {
   const [setCards, setSetCards] = useState([
@@ -117,14 +118,35 @@ function Workout() {
     fetchProgressData();
   };
 
-  const fetchProgressData = async () => {
-    try {
+const fetchProgressData = async () => {
+  try {
       const response = await axios.get('http://localhost:3000/api/workouts');
-      setProgressData(response.data);
-    } catch (error) {
+      const rawData = response.data;
+
+      if (!Array.isArray(rawData)) {
+          throw new Error("Invalid data format");
+      }
+
+      const transformedData = rawData.flatMap(workout => 
+          workout.exercises.map(exercise => ({
+              date: new Date(workout.date).toLocaleDateString(),
+              exerciseName: exercise.exerciseName,
+              weight: Math.max(...exercise.rows.map(row => parseFloat(row.weight) || 0)) // Find the highest weight
+          }))
+      );
+
+      // Group data by exercise name
+      const groupedData = d3.groups(transformedData, d => d.exerciseName);
+
+      console.log('Transformed Data:', transformedData);
+      console.log('Grouped Data:', groupedData);
+
+      setProgressData(transformedData);
+  } catch (error) {
       console.error('Error fetching progress data:', error);
-    }
-  };
+  }
+};
+
 
   const handleSummaryClose = () => setShowSummary(false);
 
