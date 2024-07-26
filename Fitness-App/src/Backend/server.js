@@ -5,6 +5,8 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import workoutRoutes from './routes/workouts.js';
+import userRoutes from './routes/users.js'
+import authRoutes from './routes/auth.js'
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -24,7 +26,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/workouts', workoutRoutes);
 
 app.listen(port, () => {

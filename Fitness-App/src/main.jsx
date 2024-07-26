@@ -5,7 +5,9 @@ import App from './App.jsx';
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import Workout from './Pages/WorkoutInput/Workout.jsx';
 import SetCard from './Pages/WorkoutInput/SetCard.jsx';
-import UserProfile from './Pages/UserProfile/UserProfile.jsx'
+import UserProfile from './Pages/UserProfile/UserProfile.jsx';
+import Signup from './Pages/SignUp';
+import Login from './Pages/LogIn';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/index.css';
 
@@ -19,6 +21,8 @@ function Main() {
           <Route path="set-card" element={<SetCard />} />
           <Route path="user-profile" element={<UserProfile />} />
         </Route>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
