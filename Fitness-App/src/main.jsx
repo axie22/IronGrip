@@ -5,7 +5,8 @@ import App from './App.jsx';
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import Workout from './Pages/WorkoutInput/Workout.jsx';
 import SetCard from './Pages/WorkoutInput/SetCard.jsx';
-import UserProfile from './Pages/UserProfile/UserProfile.jsx'
+import UserProfile from './Pages/UserProfile/UserProfile.jsx';
+import Login from './Pages/Login/login.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/index.css';
 
@@ -18,6 +19,7 @@ function Main() {
           <Route path="workout" element={<Workout />} />
           <Route path="set-card" element={<SetCard />} />
           <Route path="user-profile" element={<UserProfile />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </Router>

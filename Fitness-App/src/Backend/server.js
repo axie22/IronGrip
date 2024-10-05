@@ -4,7 +4,8 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import workoutRoutes from './routes/workouts.js';
+import workoutRoutes from './routes/workouts.js'; 
+
 import dotenv from 'dotenv';
 dotenv.config();
 
