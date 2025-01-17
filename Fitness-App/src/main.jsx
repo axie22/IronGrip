@@ -9,6 +9,7 @@ import UserProfile from './Pages/UserProfile/UserProfile.jsx';
 import Login from './Pages/Login/login.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/index.css';
+import Signup from "./Pages/Signup/signup.jsx";
 
 function Main() {
   return (
@@ -20,6 +21,7 @@ function Main() {
           <Route path="set-card" element={<SetCard />} />
           <Route path="user-profile" element={<UserProfile />} />
           <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
         </Route>
       </Routes>
     </Router>

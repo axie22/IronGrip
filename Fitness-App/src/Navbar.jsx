@@ -13,6 +13,9 @@ export default function Navigation() {
                         <Nav.Link as={NavLink} to="/workout" className="nav-title">
                             Record Workout
                         </Nav.Link>
+                        <Nav.Link as={NavLink} to="/login" className="nav-title">
+                            Login
+                        </Nav.Link>
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text className="me-3">

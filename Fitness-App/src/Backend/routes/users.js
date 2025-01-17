@@ -11,17 +11,20 @@ router.get('/', (req, res) => {
 });
 
 // Register new user
-router.post('/register', async (req, res) => {
+router.post('/api/users/register', async (req, res) => {
     const { email, username, password } = req.body;
 
     try {
         // check if user with this email already exists
         let user = await User.findOne({ email });
+        console.log(user);
         if (user) {
             return res.status(400).json({ message: 'User already exists' });
         }
         // create a new user
-        user = new User({ email, username, password });
+        const hashedPassword = await bcrypt.hash(password, 10);
+        user = new User({ email, username, password: hashedPassword });
+
         await user.save();
         //create JWT token for the newly registered user
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });

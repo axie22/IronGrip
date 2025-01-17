@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../../assets/login.css';
+import { NavLink } from 'react-router-dom';
+import {Nav} from "react-bootstrap";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -46,6 +48,11 @@ const Login = () => {
           />
         </div>
         <button type="submit">Login</button>
+        <button className="signup-button">
+          <Nav.Link as={NavLink} to="/signup" className="nav-title">
+            No account? Sign Up
+          </Nav.Link>
+        </button>
       </form>
     </div>
   );
